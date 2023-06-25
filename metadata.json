@@ -1,0 +1,8 @@
+{
+"max-instances": "1",
+"uuid": "sidshortcuts@mylinuxdesklet",
+"name": "First Desklet",
+"description": "This is my first desklet",
+"version": "0.1",
+"prevent-decorations": false
+}
