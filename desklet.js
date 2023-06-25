@@ -20,8 +20,9 @@ MyDesklet.prototype = {
             "Switch windows: Alt + Tab",
             "Switch windows of the same application: Alt + `",
             "Switch workspace: Ctrl + Alt + Left/Right Arrow",
-            "Move window to a new workspace: Shift + Ctrl + Alt + Left/Right Arrow",
-            "Switch tabs: Ctrl + Tab"
+            "Switch tabs: Ctrl + Tab",
+            "Screenshot of an area: Ctrl + Shift + Z",
+            "CopyQ: Ctrl + `",
         ];
 
         let text = "Keyboard Shortcuts:\n" + shortcuts.join('\n');
@@ -30,6 +31,14 @@ MyDesklet.prototype = {
         this.window.add_actor(this.text);
         this.setContent(this.window);
     },
+
+    prettyPrint(shortcuts) {
+        let formattedShortcuts = shortcuts.map((shortcut, index) => {
+            return `${index + 1}. ${shortcut}`;
+        });
+
+        return "Keyboard Shortcuts:\n\n" + formattedShortcuts.join('\n');
+    }
 };
 
 function main(metadata, desklet_id) {
